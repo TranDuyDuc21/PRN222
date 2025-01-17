@@ -1,48 +1,65 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-namespace ClientApp
+class Program
 {
-    class Program
+    // Hàm kết nối đến server
+    static void ConnectServer(string server, int port)
     {
-        static void Main(string[] args)
+        string message, responseData; // Biến lưu tin nhắn và dữ liệu phản hồi từ server
+        int bytes; // Biến lưu số byte nhận được
+        try
         {
-            const string server = "localhost";  // Địa chỉ máy chủ
-            const int port = 8080;  // Cổng kết nối
+            // Tạo kết nối TCP đến server với địa chỉ IP và cổng chỉ định
+            TcpClient client = new TcpClient(server, port);
 
-            Console.WriteLine("Client started...");  // In ra thông báo khi client bắt đầu
-            try
+            // Đặt tiêu đề cho cửa sổ console là "Client Application"
+            Console.Title = "Client Application";
+
+            NetworkStream stream = null; // Đối tượng để giao tiếp với server
+            while (true)
             {
-                using (TcpClient client = new TcpClient(server, port))  // Kết nối đến máy chủ
+                // Hiển thị yêu cầu nhập tin nhắn từ người dùng
+                Console.WriteLine("Input message <press Enter to exit>:");
+                message = Console.ReadLine(); // Đọc tin nhắn từ người dùng
+
+                // Nếu người dùng nhấn Enter (không nhập tin nhắn), thoát khỏi vòng lặp
+                if (message == string.Empty)
                 {
-                    Console.WriteLine($"Connected to server {server}:{port}");  // In ra thông báo khi kết nối thành công
-
-                    NetworkStream stream = client.GetStream();  // Lấy stream kết nối từ client
-
-                    // Gửi dữ liệu đến máy chủ
-                    Console.Write("Enter text to send to server: ");
-                    string input = Console.ReadLine() ?? string.Empty;  // Nhập dữ liệu từ người dùng
-                    byte[] data = Encoding.UTF8.GetBytes(input);  // Chuyển đổi dữ liệu thành mảng byte
-                    stream.Write(data, 0, data.Length);  // Gửi mảng byte đến máy chủ
-                    Console.WriteLine($"Sent to server: {input}");  // In ra thông báo đã gửi
-
-                    // Nhận phản hồi từ máy chủ
-                    byte[] buffer = new byte[1024];  // Tạo bộ đệm để nhận dữ liệu
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length);  // Đọc dữ liệu trả về từ máy chủ
-                    string responseText = Encoding.UTF8.GetString(buffer, 0, bytesRead);  // Chuyển đổi mảng byte thành chuỗi
-                    Console.WriteLine($"Received from server: {responseText}");  // In ra phản hồi từ máy chủ
+                    break;
                 }
+
+                // Chuyển tin nhắn sang dạng byte để gửi qua mạng
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes($"{message}");
+                stream = client.GetStream(); // Lấy luồng mạng từ client
+                stream.Write(data, 0, data.Length); // Gửi dữ liệu đến server
+                Console.WriteLine("Sent: {0}", message); // Hiển thị tin nhắn đã gửi
+
+                // Chuẩn bị mảng byte để nhận dữ liệu phản hồi từ server
+                data = new Byte[256];
+                bytes = stream.Read(data, 0, data.Length); // Đọc dữ liệu từ server
+                responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes); // Chuyển byte sang chuỗi
+                Console.WriteLine("Received: {0}", responseData); // Hiển thị dữ liệu nhận được
             }
-            catch (SocketException ex)
-            {
-                Console.WriteLine($"Socket error: {ex.Message}");  // In ra lỗi khi kết nối gặp vấn đề
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");  // In ra lỗi chung
-            }
-            Console.WriteLine("Client terminated.");  // Thông báo khi client kết thúc
+
+            // Đóng kết nối với server
+            client.Close();
         }
+        catch (Exception ex)
+        {
+            // Hiển thị thông báo lỗi nếu xảy ra lỗi
+            Console.WriteLine("Exception: {0}", ex.Message);
+        }
+    }
+
+    // Hàm chính của chương trình
+    static void Main(string[] args)
+    {
+        string server = "127.0.0.1"; // Địa chỉ IP server (localhost)
+        int port = 13000; // Cổng server
+        ConnectServer(server, port); // Gọi hàm kết nối đến server
     }
 }

@@ -12,3 +12,4 @@ D:\PRN222\code prn222\Slide 1\Lab1\ServerApp\obj\Debug\net8.0\refint\ServerApp.d
 D:\PRN222\code prn222\Slide 1\Lab1\ServerApp\obj\Debug\net8.0\ServerApp.pdb
 D:\PRN222\code prn222\Slide 1\Lab1\ServerApp\obj\Debug\net8.0\ServerApp.genruntimeconfig.cache
 D:\PRN222\code prn222\Slide 1\Lab1\ServerApp\obj\Debug\net8.0\ref\ServerApp.dll
+D:\PRN222\code prn222\Slide 1\Lab1\ServerApp\obj\Debug\net8.0\ServerApp.sourcelink.json

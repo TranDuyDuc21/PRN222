@@ -1,60 +1,93 @@
-﻿using System;
+﻿using System.IO;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 
-namespace ServerApp
+class Program
 {
-    class Program
+    // Hàm xử lý tin nhắn từ client
+    static void ProcessMessage(object parm)
     {
-        static void Main(string[] args)
+        string data; // Biến lưu dữ liệu nhận được từ client
+        int count; // Biến lưu số byte đọc được
+        try
         {
-            const int port = 8080;  // Cổng mà server sẽ lắng nghe
+            TcpClient client = parm as TcpClient; // Lấy đối tượng client từ tham số đầu vào
+            Byte[] bytes = new Byte[256]; // Bộ đệm lưu dữ liệu nhận được
+            NetworkStream stream = client.GetStream(); // Lấy luồng mạng từ client
 
-            Console.WriteLine("Starting server...");  // In ra thông báo khi server bắt đầu
-            TcpListener listener = new TcpListener(IPAddress.Any, port);  // Khởi tạo listener để lắng nghe kết nối
-
-            try
+            // Vòng lặp nhận dữ liệu từ client
+            while ((count = stream.Read(bytes, 0, bytes.Length)) != 0)
             {
-                listener.Start();  // Bắt đầu lắng nghe kết nối
-                Console.WriteLine($"Server is listening on port {port}...");  // In ra thông báo server đang lắng nghe
+                // Chuyển dữ liệu từ byte sang chuỗi
+                data = System.Text.Encoding.ASCII.GetString(bytes, 0, count);
+                Console.WriteLine($"Received: {data} at {DateTime.Now:t}"); // Hiển thị dữ liệu nhận được và thời gian
 
-                while (true)
-                {
-                    Console.WriteLine("Waiting for a client to connect...");  // In ra thông báo khi server đang chờ kết nối
-                    TcpClient client = listener.AcceptTcpClient();  // Chấp nhận kết nối từ client
-                    Console.WriteLine("Client connected!");  // Thông báo khi client kết nối thành công
+                // Xử lý dữ liệu (chuyển sang chữ hoa)
+                data = $"{data.ToUpper()}";
 
-                    NetworkStream stream = client.GetStream();  // Lấy stream kết nối từ client
-
-                    // Đọc dữ liệu từ client
-                    byte[] buffer = new byte[1024];  // Tạo bộ đệm để đọc dữ liệu
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length);  // Đọc dữ liệu từ stream
-                    string receivedText = Encoding.UTF8.GetString(buffer, 0, bytesRead);  // Chuyển đổi mảng byte thành chuỗi
-                    Console.WriteLine($"Received from client: {receivedText}");  // In ra dữ liệu nhận được từ client
-
-                    // Xử lý dữ liệu (chuyển đổi thành chữ hoa)
-                    string responseText = receivedText.ToUpper();  // Chuyển văn bản thành chữ hoa
-                    byte[] responseData = Encoding.UTF8.GetBytes(responseText);  // Chuyển đổi văn bản thành mảng byte
-
-                    // Gửi phản hồi tới client
-                    stream.Write(responseData, 0, responseData.Length);  // Gửi dữ liệu tới client
-                    Console.WriteLine($"Sent to client: {responseText}");  // In ra thông báo đã gửi phản hồi
-
-                    // Đóng kết nối
-                    client.Close();  // Đóng kết nối với client
-                    Console.WriteLine("Client disconnected.\n");  // Thông báo khi client ngắt kết nối
-                }
+                // Chuyển dữ liệu xử lý thành byte và gửi lại client
+                byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
+                stream.Write(msg, 0, msg.Length); // Gửi dữ liệu
+                Console.WriteLine($"Sent: {data}"); // Hiển thị dữ liệu đã gửi
             }
-            catch (Exception ex)
+            client.Close(); // Đóng kết nối với client
+        }
+        catch (Exception ex)
+        {
+            // Hiển thị lỗi nếu có
+            Console.WriteLine("{0}", ex.Message);
+            Console.WriteLine("Waiting Message.......");
+        }
+    }
+
+    // Hàm khởi động server
+    static void ExecuteServer(string host, int port)
+    {
+        int Count = 0; // Biến đếm số lượng client đã kết nối
+        TcpListener server = null; // Biến lưu server listener
+        try
+        {
+            Console.Title = "Server Application"; // Đặt tiêu đề cửa sổ console
+            IPAddress localAddr = IPAddress.Parse(host); // Chuyển đổi địa chỉ IP từ chuỗi
+            server = new TcpListener(localAddr, port); // Tạo đối tượng TcpListener để lắng nghe kết nối
+            server.Start(); // Bắt đầu server
+            Console.WriteLine(new string('*', 40)); // Hiển thị dòng phân cách
+            Console.WriteLine("Waiting for a connection......."); // Chờ client kết nối
+
+            // Vòng lặp chính để xử lý nhiều client
+            while (true)
             {
-                Console.WriteLine($"Error: {ex.Message}");  // In ra thông báo lỗi nếu có
-            }
-            finally
-            {
-                listener.Stop();  // Dừng listener khi server kết thúc
-                Console.WriteLine("Server stopped.");  // Thông báo khi server dừng
+                TcpClient client = server.AcceptTcpClient(); // Chấp nhận kết nối từ client
+                Console.WriteLine($"Number of client connected: {+Count}"); // Hiển thị số lượng client đã kết nối
+                Console.WriteLine(new string('*', 40)); // Hiển thị dòng phân cách
+
+                // Tạo một luồng (thread) mới để xử lý tin nhắn từ client
+                Thread thread = new Thread(new ParameterizedThreadStart(ProcessMessage));
+                thread.Start(client); // Bắt đầu luồng và truyền client làm tham số
             }
         }
+        catch (Exception ex)
+        {
+            // Hiển thị lỗi nếu có
+            Console.WriteLine("{0}", ex.Message);
+        }
+        finally
+        {
+            // Dừng server khi kết thúc
+            server.Stop();
+            Console.WriteLine("Server stop. Press any key to exit !");
+        }
+        Console.Read(); // Đợi người dùng nhấn phím trước khi thoát
+    }
+
+    // Hàm chính của chương trình
+    public static void Main()
+    {
+        string host = "127.0.0.1"; // Địa chỉ IP server
+        int port = 13000; // Cổng lắng nghe
+        ExecuteServer(host, port); // Gọi hàm khởi động server
     }
 }

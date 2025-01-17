@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{48E8F244-0AFE-49F1-987C-B7E8E62CE9C3}|ClientApp\\ClientApp.csproj|solutionrelative:clientapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48E8F244-0AFE-49F1-987C-B7E8E62CE9C3}|ClientApp\\ClientApp.csproj|D:\\PRN222\\code prn222\\Slide 1\\Lab1\\clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{48E8F244-0AFE-49F1-987C-B7E8E62CE9C3}|ClientApp\\ClientApp.csproj|solutionrelative:clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5860CD3A-953A-4C7B-A007-F805914013E1}|ServerApp\\ServerApp.csproj|D:\\PRN222\\code prn222\\Slide 1\\Lab1\\serverapp\\serverapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{5860CD3A-953A-4C7B-A007-F805914013E1}|ServerApp\\ServerApp.csproj|solutionrelative:serverapp\\serverapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48E8F244-0AFE-49F1-987C-B7E8E62CE9C3}|ClientApp\\ClientApp.csproj|D:\\PRN222\\code prn222\\Slide 1\\Lab1\\clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{48E8F244-0AFE-49F1-987C-B7E8E62CE9C3}|ClientApp\\ClientApp.csproj|solutionrelative:clientapp\\clientapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,8 +58,8 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClientApp",
+              "DocumentIndex": 3,
+              "Title": "ClientApp.csproj",
               "DocumentMoniker": "D:\\PRN222\\code prn222\\Slide 1\\Lab1\\ClientApp\\ClientApp.csproj",
               "RelativeDocumentMoniker": "ClientApp\\ClientApp.csproj",
               "ToolTip": "D:\\PRN222\\code prn222\\Slide 1\\Lab1\\ClientApp\\ClientApp.csproj",
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServerApp",
+              "DocumentIndex": 2,
+              "Title": "ServerApp.csproj",
               "DocumentMoniker": "D:\\PRN222\\code prn222\\Slide 1\\Lab1\\ServerApp\\ServerApp.csproj",
               "RelativeDocumentMoniker": "ServerApp\\ServerApp.csproj",
               "ToolTip": "D:\\PRN222\\code prn222\\Slide 1\\Lab1\\ServerApp\\ServerApp.csproj",
               "RelativeToolTip": "ServerApp\\ServerApp.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-01-15T08:50:00.89Z"
             },
@@ -88,10 +88,9 @@
               "RelativeDocumentMoniker": "ClientApp\\Program.cs",
               "ToolTip": "D:\\PRN222\\code prn222\\Slide 1\\Lab1\\ClientApp\\Program.cs",
               "RelativeToolTip": "ClientApp\\Program.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAC8AAAABAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAowEEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T08:49:57.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T08:49:57.894Z"
             },
             {
               "$type": "Document",
@@ -101,7 +100,7 @@
               "RelativeDocumentMoniker": "ServerApp\\Program.cs",
               "ToolTip": "D:\\PRN222\\code prn222\\Slide 1\\Lab1\\ServerApp\\Program.cs",
               "RelativeToolTip": "ServerApp\\Program.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAswDwAAAAAAAAA",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAowF0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-15T08:49:28.994Z",
               "EditorCaption": ""
