@@ -1,0 +1,29 @@
+﻿<Window x:Class="HttpClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HttpClient WPF" Height="450" Width="800">
+    <Grid>
+        <!-- Cấu trúc Grid với 2 cột -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- Cột đầu tiên chiếm phần còn lại -->
+            <ColumnDefinition Width="Auto" />
+            <!-- Cột chứa nút FetchDataButton, ClearButton, CloseButton -->
+        </Grid.ColumnDefinitions>
+
+        <!-- TextBox cho URL -->
+        <TextBox Name="UrlTextBox" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Top" Height="30" HorizontalScrollBarVisibility="Auto" />
+
+        <!-- Nút Fetch Data -->
+        <Button Name="FetchDataButton" Grid.Column="1" Content="Fetch Data" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Margin="10" Height="30" Click="FetchDataButton_Click" />
+
+        <!-- Nút Clear -->
+        <Button Name="ClearButton" Grid.Column="1" Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Margin="10,60,10,0" Height="30" Click="ClearButton_Click" />
+
+        <!-- Nút Close -->
+        <Button Name="CloseButton" Grid.Column="1" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Margin="10,110,10,0" Height="30" Click="CloseButton_Click" />
+
+        <!-- TextBox hiển thị kết quả -->
+        <TextBox Name="DisplayTextBox" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,100,10,10" VerticalAlignment="Stretch" Height="300" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\bin\Debug\net8.0\Using Task Demonstration - 01.exe
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\bin\Debug\net8.0\Using Task Demonstration - 01.deps.json
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\bin\Debug\net8.0\Using Task Demonstration - 01.runtimeconfig.json
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\bin\Debug\net8.0\Using Task Demonstration - 01.dll
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\bin\Debug\net8.0\Using Task Demonstration - 01.pdb
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.AssemblyInfoInputs.cache
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.AssemblyInfo.cs
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.csproj.CoreCompileInputs.cache
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.dll
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\refint\Using Task Demonstration - 01.dll
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.pdb
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\Using Task Demonstration - 01.genruntimeconfig.cache
+D:\PRN222\code prn222\Slide 2\Using Task Demonstration - 01\obj\Debug\net8.0\ref\Using Task Demonstration - 01.dll

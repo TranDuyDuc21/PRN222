@@ -1,0 +1,14 @@
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\bin\Debug\net8.0\Asynchronous Demonstration - 02.exe
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\bin\Debug\net8.0\Asynchronous Demonstration - 02.deps.json
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\bin\Debug\net8.0\Asynchronous Demonstration - 02.runtimeconfig.json
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\bin\Debug\net8.0\Asynchronous Demonstration - 02.dll
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\bin\Debug\net8.0\Asynchronous Demonstration - 02.pdb
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.AssemblyInfoInputs.cache
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.AssemblyInfo.cs
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.csproj.CoreCompileInputs.cache
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.dll
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\refint\Asynchronous Demonstration - 02.dll
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.pdb
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\Asynchronous Demonstration - 02.genruntimeconfig.cache
+D:\PRN222\code prn222\Slide 2\Asynchronous Demonstration - 02\obj\Debug\net8.0\ref\Asynchronous Demonstration - 02.dll

@@ -1,0 +1,4 @@
+D:\PRN222\code prn222\HttpClient Class Demo-01-Sl1\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\PRN222\code prn222\HttpClient Class Demo-01-Sl1\obj\Debug\net8.0-windows\App.g.cs
+D:\PRN222\code prn222\HttpClient Class Demo-01-Sl1\obj\Debug\net8.0-windows\HttpClient Class Demo-01-Sl1_MarkupCompile.cache
+D:\PRN222\code prn222\HttpClient Class Demo-01-Sl1\obj\Debug\net8.0-windows\HttpClient Class Demo-01-Sl1_MarkupCompile.lref

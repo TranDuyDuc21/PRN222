@@ -1,0 +1,20 @@
+﻿<Window x:Class="AsyncExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Async Example" Height="350" Width="525">
+    <Grid>
+        <!-- Nút Start -->
+        <Button Name="btnStartButton" Content="Start" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="10" Width="100" Height="30"
+                Click="OnStartButtonClick" />
+
+        <!-- Hộp văn bản hiển thị kết quả -->
+        <TextBox Name="txtResults" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="10,50,10,10" 
+                 Width="480" Height="250"
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                 IsReadOnly="True" />
+    </Grid>
+</Window>
